@@ -1,0 +1,75 @@
+{
+  "name": "use-detect-capture",
+  "version": "1.0.1",
+  "description": "\nuse-detect-capture is a React hook that detects screen capture or recording attempts in a web application. It monitors the usage of screen capture tools and notifies the application, enhancing security and privacy by allowing you to take action when screen recording or capture is detected.",
+  "license": "MIT",
+  "author": {
+    "name": "Dmitrii Selikhov",
+    "email": "dmitrii.selikhov@gmail.com",
+    "url": "https://www.linkedin.com/in/dimetrix"
+  },
+  "contributors": [
+    {
+      "name": "Dmitrii Selikhov",
+      "email": "dmitrii.selikhov@gmail.com",
+      "url": "https://www.linkedin.com/in/dimetrix"
+    }
+  ],
+  "email": "dmitrii.selikhov@gmail.com",
+  "scripts": {
+    "build": "tsup ./src",
+    "watch": "tsup ./src --watch",
+    "run": "node dist/index.js",
+    "dev": "pnpm run watch & nodemon dist/index.js",
+    "prettier": "prettier --write src/** package.json README.md",
+    "format": "pnpm run prettier && pnpm type",
+    "bootstrap": "pnpm install && pnpm format",
+    "type": "tsc --noEmit --incremental",
+    "tsc:clean": "tsc --build --clean",
+    "prepare": "husky",
+    "test": "jest",
+    "test:watch": "jest --watch",
+    "test:coverage": "jest --coverage",
+    "docs": "typedoc --entryPoints ./src/index.ts --out docs --plugin typedoc-plugin-markdown"
+  },
+  "homepage": "https://github.com/idimetrix/use-detect-capture#readme",
+  "url": "https://github.com/idimetrix/use-detect-capture/issue",
+  "bugs": {
+    "url": "https://github.com/idimetrix/use-detect-capture/issues"
+  },
+  "keywords": [],
+  "files": [
+    "dist",
+    "docs",
+    "package.json",
+    "README.md"
+  ],
+  "types": "./dist/index.d.ts",
+  "main": "./dist/index.js",
+  "module": "./dist/index.mjs",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "require": "./dist/index.js",
+      "import": "./dist/index.mjs"
+    }
+  },
+  "dependencies": {
+    "react": "18.3.1",
+    "typedoc": "0.26.7",
+    "typedoc-plugin-markdown": "4.2.8"
+  },
+  "devDependencies": {
+    "@types/jest": "29.5.13",
+    "@types/node": "22.7.2",
+    "husky": "9.1.6",
+    "jest": "29.7.0",
+    "lint-staged": "15.2.10",
+    "nodemon": "3.1.7",
+    "prettier": "3.3.3",
+    "ts-jest": "29.2.5",
+    "ts-node": "10.9.2",
+    "tsup": "8.3.0",
+    "typescript": "5.6.2"
+  }
+}
